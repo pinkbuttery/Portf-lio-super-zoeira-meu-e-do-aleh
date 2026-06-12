@@ -1,0 +1,93 @@
+body {
+    background-color: black;
+    margin: 0;
+    height: 150vh;
+
+    background-image: 
+        radial-gradient(circle, rgba(0,0,0,0) 5%, rgba(0,0,0,1) 80%),
+        url(lindoss.jpeg);
+
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.container-projetos {
+    display: flex;
+    gap: 20px; 
+    
+    /* CORREÇÃO AQUI: Mantém os botões centralizados na horizontal */
+    justify-content: center; 
+    
+    /* CORREÇÃO AQUI: Alinha os botões lá no topo da página */
+    align-items: flex-start; 
+    
+    /* Ajusta o espaçamento do topo para não colarem na borda da tela */
+    padding: 60px 20px; 
+    flex: 1; 
+}
+
+
+.botao-projeto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 15px;
+    text-decoration: none; 
+    transition: transform 0.2s, background-color 0.2s;
+    width: 180px; 
+}
+
+
+.botao-projeto:hover {
+    transform: translateY(-5px); 
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+.imagem-projeto {
+    width: 100%;
+    height: 120px; 
+    border-radius: 8px;
+    background-size: contain;
+    background-position: center;
+    margin-bottom: 12px; 
+    background-repeat: no-repeat;
+}
+
+.botao-projeto span {
+    color: white;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.img-yellow { background-image: url('yellow site/source/img/icone/imgY.jpg'); }
+.img-winamp { background-image: url('winamploguinho.png'); }
+.img-termo  { background-image: url('termofalso.png'); }
+.img-aleh   { background-image: url('alebros.webp'); }
+
+
+.rodapezin {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    color: #636363; 
+    padding: 40px 20px 20px 20px; 
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+.rodapezin p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    font-style: italic; 
+}
