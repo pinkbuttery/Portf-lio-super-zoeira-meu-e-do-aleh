@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instax Experience - Yellow Cases</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <header id="main-header">
+        <img src="./source/img/identi/banner.png" id="banner">
+    </header>
+
+    <nav id="main-nav">
+        <a href="./home.html" class="nav-item">HOME</a>
+        <a href="#" class="nav-item">CAPAS</a>
+        <a href="#" class="nav-item">PELÍCULAS</a>
+        <a href="#" class="nav-item">ACESSÓRIOS</a>
+        <a href="#" class="nav-item">AUDIO</a>
+        <a href="#" class="nav-item">GAMER</a>
+    </nav>
+
+    <main>
+        <a href="./home.html" class="back-link">&larr; Voltar</a>
+
+        <div class="product-container">
+            
+            <div class="carousel-container">
+                <span class="carousel-arrow arrow-left" id="prev-btn">&larr;</span>
+
+                <div class="carousel-track">
+                    <div class="carousel-slide active">
+                        <img src="./source/img/carrosel3/img1.webp" alt="Instax Mini 12">
+                        <div class="carousel-caption">
+                            <h2>Capturando Momentos</h2>
+                            <p>A elegância da fotografia instantânea.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <img src="./source/img/carrosel3/img2.webp" alt="Instax Detalhes">
+                        <div class="carousel-caption">
+                            <h2>Estilo e Praticidade</h2>
+                            <p>Design compacto para levar aonde for.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <img src="./source/img/carrosel3/img3.webp" alt="Instax em Uso">
+                        <div class="carousel-caption">
+                            <h2>Cores Vibrantes</h2>
+                            <p>Registre memórias com exclusividade.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <span class="carousel-arrow arrow-right" id="next-btn">&rarr;</span>
+            </div>
+
+            <div class="product-details">
+                <span class="carousel-badge">INSTAX LIFESTYLE</span>
+                <h2 class="product-title">INSTAX MINI 12</h2>
+                
+                <p class="product-ref">Referência: INST-M12</p>
+                
+                <div class="product-price">R$ 665,00</div>
+                
+                <p class="product-description">
+                    A Instax Mini 12 é a companheira ideal para transformar seus melhores momentos em recordações físicas. Com ajuste automático de exposição e um modo selfie intuitivo, ela garante que cada clique saia perfeito, pronto para decorar ou presentear.
+                </p>
+
+                <h3 class="specs-title">Especificações Técnicas</h3>
+                <ul class="specs-list">
+                    <li><strong>Formato do Filme:</strong> Instax Mini (62 x 46 mm)</li>
+                    <li><strong>Modo Selfie:</strong> Ajuste automático de lente</li>
+                    <li><strong>Exposição:</strong> Controle automático de luz</li>
+                    <li><strong>Alimentação:</strong> 2 pilhas alcalinas AA</li>
+                    <li><strong>Design:</strong> Acabamento premium e ergonômico</li>
+                </ul>
+
+                <a href="https://wa.me/5547992216572?text=Olá!%20Tenho%20interesse%20na%20Instax%20Mini%2012%20que%20vi%20no%20site." target="_blank" class="btn-buy">
+                    Quero a minha no WhatsApp
+                </a>
+            </div>
+        </div>
+    </main>
+
+<footer id="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>SOBRE NÓS</h3>
+                <p>Na Yellow Cases, somos movidos pela paixão por tecnologia e estilo. Oferecemos a maior variedade de capas, películas e acessórios premium para proteger e elevar o nível dos seus dispositivos. Seu setup, suas regras.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>CONTATO</h3>
+                <p><strong>WhatsApp:</strong> (47) 99221-6572</p>
+                <p><strong>E-mail:</strong> contato@yellowcases.com</p>
+                <p><strong>Endereço:</strong> Av. Nereu Ramos, 4009 - salas 02 e 03 - Meia Praia, Itapema - SC</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>REDES SOCIAIS</h3>
+                <a href="https://instagram.com" target="_blank" class="footer-social-link">@YELLOWCASES.OFICIAL</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <hr class="footer-divider">
+            <p class="epic-quote">"O SUCESSO NÃO É APENAS O DESTINO, É A PROTEÇÃO E A FORÇA DA SUA JORNADA."</p>
+            <p class="copyright">&copy; 2026 Yellow Cases. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const slides = document.querySelectorAll(".carousel-slide");
+            const prevBtn = document.getElementById("prev-btn");
+            const nextBtn = document.getElementById("next-btn");
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove("active"));
+                if (index >= slides.length) currentIndex = 0;
+                else if (index < 0) currentIndex = slides.length - 1;
+                else currentIndex = index;
+                slides[currentIndex].classList.add("active");
+            }
+
+            nextBtn.addEventListener("click", () => showSlide(currentIndex + 1));
+            prevBtn.addEventListener("click", () => showSlide(currentIndex - 1));
+        });
+    </script>
+</body>
+</html>

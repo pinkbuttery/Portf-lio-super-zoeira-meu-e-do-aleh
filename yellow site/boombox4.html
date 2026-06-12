@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boombox 4 - Yellow Cases</title>
+    <link class="target" rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <header id="main-header">
+        <img src="./source/img/identi/banner.png" id="banner">
+    </header>
+
+    <nav id="main-nav">
+        <a href="./home.html" class="nav-item">HOME</a>
+        <a href="#" class="nav-item">CAPAS</a>
+        <a href="#" class="nav-item">PELÍCULAS</a>
+        <a href="#" class="nav-item">ACESSÓRIOS</a>
+        <a href="#" class="nav-item">AUDIO</a>
+        <a href="#" class="nav-item">GAMER</a>
+    </nav>
+
+    <main>
+        <a href="./home.html" class="back-link">&larr; Voltar</a>
+
+        <div class="product-container">
+            
+            <div class="carousel-container">
+                <span class="carousel-arrow arrow-left" id="prev-btn">&larr;</span>
+
+                <div class="carousel-track">
+                    <div class="carousel-slide active">
+                        <img src="./source/img/carrosel1/img1.webp" alt="Caixa do Produto - Yellow Cases">
+                        <div class="carousel-caption">
+                            <h2>Proteção e Estilo</h2>
+                            <p>Confira nossa embalagem exclusiva.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <img src="./source/img/carrosel1/img2.webp" alt="Boombox 4 Frente - Yellow Cases" onerror="this.src='./source/img/carrosel1/img1.webp';">
+                        <div class="carousel-caption">
+                            <h2>Som Monstruoso</h2>
+                            <p>Design moderno com potência máxima.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <img src="./source/img/carrosel1/img3.webp" alt="Boombox 4 Detalhes - Yellow Cases" onerror="this.src='./source/img/carrosel1/img1.webp';">
+                        <div class="carousel-caption">
+                            <h2>Pronta para Tudo</h2>
+                            <p>Certificação IP67 à prova d'água.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <span class="carousel-arrow arrow-right" id="next-btn">&rarr;</span>
+            </div>
+
+            <div class="product-details">
+                <span class="carousel-badge">PREMIUM AUDIO</span>
+                <h2 class="product-title">BOOMBOX 4</h2>
+                
+                <p class="product-ref">Referência: YW-BB4</p>
+                
+                <div class="product-price">R$ 3.399,00</div>
+                
+                <p class="product-description">
+                    A nova Boombox 4 leva a sua experiência sonora para outro nível. Com graves ainda mais profundos, engenharia acústica aprimorada e uma assinatura de som monstruosa, ela é a parceira definitiva para qualquer ambiente. Seja na praia, no campo ou na sua sala, o som não para.
+                </p>
+
+                <h3 class="specs-title">Especificações Técnicas</h3>
+                <ul class="specs-list">
+                    <li><strong>Potência de Saída:</strong> 1x 80W RMS (Subwoofer) + 2x 40W RMS (Midrange)</li>
+                    <li><strong>Autonomia da Bateria:</strong> Até 24 horas de reprodução contínua</li>
+                    <li><strong>Tempo de Recarga:</strong> 4.5 horas</li>
+                    <li><strong>Conectividade:</strong> Bluetooth 5.3 / Entrada P2 / USB</li>
+                    <li><strong>Proteção:</strong> Certificação IP67 (À prova d'água e poeira)</li>
+                    <li><strong>Recursos Extras:</strong> Powerbank embutido para carregar seu celular</li>
+                </ul>
+
+                <a href="https://wa.me/5547992216572?text=Olá!%20Tenho%20interesse%20na%20Boombox%204%20que%20vi%20no%20site." target="_blank" class="btn-buy">
+                    Garantir a Minha no WhatsApp
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer id="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>SOBRE NÓS</h3>
+                <p>Na Yellow Cases, somos movidos pela paixão por tecnologia e estilo. Oferecemos a maior variedade de capas, películas e acessórios premium para proteger e elevar o nível dos seus dispositivos. Seu setup, suas regras.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>CONTATO</h3>
+                <p><strong>WhatsApp:</strong> (47) 99221-6572</p>
+                <p><strong>E-mail:</strong> contato@yellowcases.com</p>
+                <p><strong>Endereço:</strong> Av. Nereu Ramos, 4009 - salas 02 e 03 - Meia Praia, Itapema - SC</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>REDES SOCIAIS</h3>
+                <a href="https://instagram.com" target="_blank" class="footer-social-link">@YELLOWCASES.OFICIAL</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <hr class="footer-divider">
+            <p class="epic-quote">"O SUCESSO NÃO É APENAS O DESTINO, É A PROTEÇÃO E A FORÇA DA SUA JORNADA."</p>
+            <p class="copyright">&copy; 2026 Yellow Cases. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const slides = document.querySelectorAll(".carousel-slide");
+            const prevBtn = document.getElementById("prev-btn");
+            const nextBtn = document.getElementById("next-btn");
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                // Remove a classe ativa de todos os slides
+                slides.forEach(slide => slide.classList.remove("active"));
+                
+                // Trata os limites para dar a volta infinita
+                if (index >= slides.length) {
+                    currentIndex = 0;
+                } else if (index < 0) {
+                    currentIndex = slides.length - 1;
+                } else {
+                    currentIndex = index;
+                }
+
+                // Adiciona a classe no slide atual
+                slides[currentIndex].classList.add("active");
+            }
+
+            // Eventos dos botões de clique
+            nextBtn.addEventListener("click", function() {
+                showSlide(currentIndex + 1);
+            });
+
+            prevBtn.addEventListener("click", function() {
+                showSlide(currentIndex - 1);
+            });
+        });
+    </script>
+
+</body>
+</html>

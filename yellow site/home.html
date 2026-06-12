@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Amarelo e Preto</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <header id="main-header">
+        <img src="./source/img/identi/banner.png" id="banner">
+    </header>
+
+    <nav id="main-nav">
+        <a href="./home.html" class="nav-item">HOME</a>
+        <a href="#" class="nav-item">CAPAS</a>
+        <a href="#" class="nav-item">PELÍCULAS</a>
+        <a href="#" class="nav-item">ACESSÓRIOS</a>
+        <a href="#" class="nav-item">AUDIO</a>
+        <a href="#" class="nav-item">GAMER</a>
+    </nav>
+
+    <main id="carousels-container">
+        
+        <section class="carousel-column" id="carousel-1">
+            <div class="carousel-badge">BOOMBOX 4</div>
+            <div class="photo-carousel">
+                <span class="carousel-arrow arrow-left" onclick="mudarFoto(-1, 'carousel-1')">&lt;</span>
+                
+                <div class="carousel-view">
+                    <a href="./boombox4.html"><img src="./source/img/carrosel1/img1.webp"></a>
+                </div>
+                
+                <span class="carousel-arrow arrow-right" onclick="mudarFoto(1, 'carousel-1')">&gt;</span>
+            </div>
+        </section>  
+        <a href="./nzxt.html">
+        <section class="carousel-column" id="carousel-2">
+            <div class="carousel-badge">NZXT</div>
+            <div class="photo-carousel">
+                <span class="carousel-arrow arrow-left" onclick="mudarFoto(-1, 'carousel-2')">&lt;</span>
+                
+                <div class="carousel-view">
+                    <img src="./source/img/carrosel2/img1.webp">
+                </div>
+                
+                <span class="carousel-arrow arrow-right" onclick="mudarFoto(1, 'carousel-2')">&gt;</span>
+            </div>
+        </section>
+        </a>
+        <a href="./instax.html">
+        <section class="carousel-column" id="carousel-3">
+            <div class="carousel-badge">INSTAX</div>
+            <div class="photo-carousel">
+                <span class="carousel-arrow arrow-left" onclick="mudarFoto(-1, 'carousel-3')">&lt;</span>
+                
+                <div class="carousel-view">
+                    <img src="./source/img/carrosel3/img1.webp">
+                </div>
+                
+                <span class="carousel-arrow arrow-right" onclick="mudarFoto(1, 'carousel-3')">&gt;</span>
+            </div>
+        </section>
+        </a>
+        <a href="./acessorios.html">
+        <section class="carousel-column" id="carousel-4">
+            <div class="carousel-badge">Acessórios</div>
+            <div class="photo-carousel">
+                <span class="carousel-arrow arrow-left" onclick="mudarFoto(-1, 'carousel-4')">&lt;</span>
+                
+                <div class="carousel-view">
+                    <img src="./source/img/carrosel4/img1.avif">
+                </div>
+                
+                <span class="carousel-arrow arrow-right" onclick="mudarFoto(1, 'carousel-4')">&gt;</span>
+            </div>
+        </section>
+        </a>
+    </main>
+
+    <article id="text-content-section">
+        <div class="section-title-container">
+            <h2 class="section-title">Título da Seção</h2>
+        </div>
+        <div class="text-box">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum id arcu eget tempor. Nulla facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam at erat ac magna rhoncus elementum. Etiam vel ante elementum, malesuada erat eget, elementum augue. Duis vitae interdum lectus. Mauris non neque ex.</p>
+            <p>Donec eget lorem in nibh finibus ultrices. Aliquam elementum elementum arcu, ut dictum purus dictum vel. Cras ac mi sit amet sapien feugiat varius. Ut ut tortor magna. Suspendisse non sapien vel elit maximus porttitor vel tempor ante.</p>
+        </div>
+    </article>
+
+    <footer id="main-footer">
+        <div class="footer-container">
+            
+            <div class="footer-column about-box">
+                <h3>SOBRE NÓS</h3>
+                <p>Na Yellow Cases, somos movidos pela paixão por tecnologia e estilo. Oferecemos a maior variedade de capas, películas e acessórios premium para proteger e elevar o nível dos seus dispositivos. Seu setup, suas regras.</p>
+            </div>
+
+            <div class="footer-column contact-box">
+                <h3>CONTATO</h3>
+                <p><strong>WhatsApp:</strong> (47) 99221-6572</p>
+                <p><strong>E-mail:</strong> contato@yellowcases.com</p>
+                <p><strong>Endereço:</strong> Av. Nereu Ramos, 4009 - salas 02 e 03 - Meia Praia, Itapema - SC, 88220-000</p>
+            </div>
+
+            <div class="footer-column social-box">
+                <h3>REDES SOCIAIS</h3>
+                <a href="https://www.instagram.com/yellowcasesitapema/" target="_blank" class="footer-social-link">
+                    <span>📸</span> @yellowcases.oficial
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <hr class="footer-divider">
+            <p class="epic-quote">"O SUCESSO NÃO É APENAS O DESTINO, É A PROTEÇÃO E A FORÇA DA SUA JORNADA."</p>
+            <p class="copyright">&copy; 2026 Yellow Cases. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="fake-chat-container">
+        
+        <button id="chat-button" onclick="alternarChat()">
+            <img src="./source/img/icone/imgM.png" id="chat-icon">
+        </button>
+
+        <div id="chat-window" class="chat-hidden">
+           <!-- Cabeçalho do Chat com Mascote -->
+            <div id="chat-header">
+                <div class="chat-status-container">
+                    <span class="chat-status-dot"></span>
+                    <!-- Foto do Mascote adicionada aqui -->
+                    <img src="./source/img/icone/imgM.png" alt="Mascote Yellow Cases" class="chat-mascot-pic">
+                    <span class="chat-title">Yellowzinho</span>
+                </div>
+                <button id="chat-close-btn" onclick="alternarChat()">&times;</button>
+            </div>
+
+            <div id="chat-body">
+                <div class="chat-message bot-message">
+                    Olá! Bem-vindo à Yellow Cases. Como posso te ajudar hoje?
+                </div>
+            </div>
+
+            <div id="chat-footer">
+                <input type="text" id="chat-input" placeholder="Digite sua mensagem..." onkeypress="verificarEnter(event)">
+                <button id="chat-send-btn" onclick="enviarMensagemFake()">Enviar</button>
+            </div>
+        </div>
+    </div>
+        <script src="script.js"></script>
+
+</body>
+</html>

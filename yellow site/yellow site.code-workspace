@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "yellow site",
+			"path": "../../yellow site"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "yellow site"
+	}
+}

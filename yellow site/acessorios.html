@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessórios Premium - Yellow Cases</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <header id="main-header">
+        <img src="./source/img/identi/banner.png" id="banner">
+    </header>
+
+    <nav id="main-nav">
+        <a href="./home.html" class="nav-item">HOME</a>
+        <a href="#" class="nav-item">CAPAS</a>
+        <a href="#" class="nav-item">PELÍCULAS</a>
+        <a href="#" class="nav-item">ACESSÓRIOS</a>
+        <a href="#" class="nav-item">AUDIO</a>
+        <a href="#" class="nav-item">GAMER</a>
+    </nav>
+
+    <main>
+        <a href="./home.html" class="back-link">&larr; Voltar</a>
+
+        <div class="product-container">
+            
+            <div class="carousel-container">
+                <span class="carousel-arrow arrow-left" id="prev-btn">&larr;</span>
+
+                <div class="carousel-track">
+                    <div class="carousel-slide active">
+                        <img src="./source/img/carrosel4/img1.avif" alt="Acessório 1">
+                        <div class="carousel-caption">
+                            <h2>Organização e Estilo</h2>
+                            <p>Complementos indispensáveis para o seu dia a dia.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <img src="./source/img/carrosel4/img2.avif" alt="Acessório 2">
+                        <div class="carousel-caption">
+                            <h2>Alta Durabilidade</h2>
+                            <p>Materiais premium que garantem vida longa.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <img src="./source/img/carrosel4/img3.avif" alt="Acessório 3">
+                        <div class="carousel-caption">
+                            <h2>Design Funcional</h2>
+                            <p>Praticidade em cada detalhe.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <span class="carousel-arrow arrow-right" id="next-btn">&rarr;</span>
+            </div>
+
+            <div class="product-details">
+                <span class="carousel-badge">ESSENTIALS</span>
+                <h2 class="product-title">KIT ACESSÓRIOS PRO</h2>
+                
+                <p class="product-ref">Referência: YW-ACC-KIT</p>
+                
+                <div class="product-price">De R$ 10,00 a R$ 90,00</div>
+                
+                <p class="product-description">
+                    Uma seleção rigorosa de acessórios para potencializar o uso dos seus dispositivos. Dos suportes ergonômicos aos cabos de alta performance, cada item foi escolhido pela Yellow Cases para oferecer o melhor equilíbrio entre utilidade e estética minimalista.
+                </p>
+
+                <h3 class="specs-title">O que inclui o kit?</h3>
+                <ul class="specs-list">
+                    <li><strong>Suporte Ergonômico:</strong> Ajustável para tablets e smartphones</li>
+                    <li><strong>Cabo de Carga Rápida:</strong> Nylon trançado (2 metros)</li>
+                    <li><strong>Case de Organização:</strong> Proteção rígida para cabos e carregadores</li>
+                    <li><strong>Adaptador Multi-portas:</strong> Conectividade total</li>
+                    <li><strong>Material:</strong> Acabamento premium com reforço anti-dobra</li>
+                </ul>
+
+                <a href="https://wa.me/5547992216572?text=Olá!%20Tenho%20interesse%20no%20Kit%20de%20Acessórios%20que%20vi%20no%20site." target="_blank" class="btn-buy">
+                    Adquirir Kit no WhatsApp
+                </a>
+            </div>
+        </div>
+    </main>
+
+<footer id="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>SOBRE NÓS</h3>
+                <p>Na Yellow Cases, somos movidos pela paixão por tecnologia e estilo. Oferecemos a maior variedade de capas, películas e acessórios premium para proteger e elevar o nível dos seus dispositivos. Seu setup, suas regras.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>CONTATO</h3>
+                <p><strong>WhatsApp:</strong> (47) 99221-6572</p>
+                <p><strong>E-mail:</strong> contato@yellowcases.com</p>
+                <p><strong>Endereço:</strong> Av. Nereu Ramos, 4009 - salas 02 e 03 - Meia Praia, Itapema - SC</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>REDES SOCIAIS</h3>
+                <a href="https://instagram.com" target="_blank" class="footer-social-link">@YELLOWCASES.OFICIAL</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <hr class="footer-divider">
+            <p class="epic-quote">"O SUCESSO NÃO É APENAS O DESTINO, É A PROTEÇÃO E A FORÇA DA SUA JORNADA."</p>
+            <p class="copyright">&copy; 2026 Yellow Cases. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const slides = document.querySelectorAll(".carousel-slide");
+            const prevBtn = document.getElementById("prev-btn");
+            const nextBtn = document.getElementById("next-btn");
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove("active"));
+                if (index >= slides.length) currentIndex = 0;
+                else if (index < 0) currentIndex = slides.length - 1;
+                else currentIndex = index;
+                slides[currentIndex].classList.add("active");
+            }
+
+            nextBtn.addEventListener("click", () => showSlide(currentIndex + 1));
+            prevBtn.addEventListener("click", () => showSlide(currentIndex - 1));
+        });
+    </script>
+</body>
+</html>

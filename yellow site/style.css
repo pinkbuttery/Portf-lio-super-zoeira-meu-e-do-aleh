@@ -1,0 +1,697 @@
+/* Configurações Gerais de Página (Padrão para WeasyPrint) */
+@page {
+    size: A4 portrait;
+    margin: 12mm 10mm;
+    background-color: #121212;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+/* Cabeçalho */
+#main-header {
+    background-color: #000000;
+    border: 4px solid #ffcc00;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+}
+
+#banner{
+    width: 50%;
+    
+}
+
+/* Ícone de Estrela no Canto Direito do Cabeçalho */
+.header-star {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffcc00;
+    font-size: 24pt;
+}
+
+/* Menu de Navegação */
+#main-nav {
+    margin-bottom: 30px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+}
+
+.nav-item {
+    flex: 1 1 auto; /* Os botões se distribuem igualmente e quebram linha se necessário */
+    background-color: #ffcc00;
+    color: #121212;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 10pt;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover{
+    color: #ffcc00;
+    background-color: #121212;
+}
+
+/* Seção dos Carrosséis (4 Colunas - Página Inicial) */
+#carousels-container {
+    display: flex;
+    flex-wrap: wrap;       /* Isso permite que as colunas pulem para baixo se faltar espaço */
+    gap: 16px;             /* Substitui o antigo border-spacing de forma nativa */
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.carousel-column {
+    flex: 1 1 calc(25% - 12px); /* Tenta ocupar 25% da tela, mas se adapta */
+    min-width: 220px;           /* Não deixa o carrossel ficar mais esmagado que isso */
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Indicador de Tipo de Carrossel */
+.carousel-badge {
+    display: inline-block;
+    background-color: #333;
+    color: #ffcc00;
+    border: 1px solid #ffcc00;
+    border-radius: 50%;
+    width: 100px;
+    height: 30px;
+    line-height: 22px;
+    font-size: 9pt;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Container Estrutural do Carrossel */
+.photo-carousel {
+    background-color: #262626;
+    border: 2px solid #ffcc00;
+    border-radius: 4px;
+    padding: 20px 30px; /* Ajustado para dar espaço seguro para as setas nas laterais */
+    position: relative;
+    margin-bottom: 12px;
+}
+
+/* Área Interna onde a Imagem se Posiciona */
+.carousel-view {
+    width: 100%;
+    height: 220px; /* Altura fixa e idêntica para todos os 4 blocks */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Regra Unificada para Padronização de todas as Imagens */
+.carousel-view img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Encaixa a imagem sem cortar e sem distorcer as proporções */
+}
+
+/* Setas do Carrossel (< e >) */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffcc00;
+    font-weight: bold;
+    font-size: 14pt;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10; /* Garante que a seta fique sempre clicável acima da foto */
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.carousel-arrow:hover {
+    color: #ffffff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.arrow-left { left: 8px; }
+.arrow-right { right: 8px; }
+
+/* Título abaixo/acima da foto */
+.carousel-title {
+    color: #ffcc00;
+    font-size: 11pt;
+    font-weight: bold;
+    margin: 5px 0 0 0;
+    text-transform: uppercase;
+}
+
+/* Seção de Conteúdo de Texto Inferior */
+#text-content-section {
+    background-color: #1a1a1a;
+    border: 2px solid #ffcc00;
+    border-radius: 6px;
+    padding: 20px;
+    margin-top: 20px;
+    width: 100%; /* Força a ocupar a largura total */
+    display: block; /* Garante comportamento de bloco independente */
+}
+
+.section-title-container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    display: inline-block;
+    background-color: #ffcc00;
+    color: #121212;
+    padding: 6px 20px;
+    font-size: 12pt;
+    font-weight: bold;
+    border-radius: 20px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.text-box {
+    color: #cccccc;
+    font-size: 10.5pt;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.text-box p {
+    margin: 0 0 12px 0;
+}
+.text-box p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ==========================================================================
+   NOVO: ESTILOS EXCLUSIVOS DA PÁGINA DE PRODUTO & CARROSSEL ESTÁTICO
+   ========================================================================== */
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.product-details {
+    flex: 1 1 calc(50% - 15px);
+    min-width: 300px;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 25px;
+}
+
+/* Badge reestilizada para a página de produto */
+.product-details .carousel-badge {
+    display: inline-block;
+    border-radius: 4px;
+    width: auto;
+    height: auto;
+    padding: 4px 15px;
+    line-height: normal;
+    background-color: #ffcc00;
+    color: #121212;
+    font-weight: bold;
+    font-size: 9pt;
+    border: none;
+    margin-bottom: 0;
+}
+
+.product-title {
+    color: #ffffff;
+    margin: 10px 0 0 0;
+    font-size: 22pt;
+}
+
+.product-ref {
+    color: #666;
+    margin: 5px 0;
+}
+
+.product-price {
+    color: #ffcc00;
+    font-size: 24pt;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.product-description {
+    color: #cccccc;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.specs-title {
+    color: #ffcc00;
+    margin-top: 25px;
+    font-size: 12pt;
+    text-transform: uppercase;
+}
+
+/* Lista de Especificações Técnicas */
+.specs-list {
+    margin: 20px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.specs-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #333;
+    font-size: 10.5pt;
+    color: #cccccc;
+}
+
+.specs-list strong {
+    color: #ffcc00;
+}
+
+.btn-buy {
+    display: block;
+    width: 100%;
+    background-color: #ffcc00;
+    color: #121212;
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 25px;
+    font-size: 12pt;
+    transition: background-color 0.3s ease;
+}
+
+.btn-buy:hover {
+    background-color: #e6b800;
+}
+
+.back-link {
+    display: inline-block;
+    color: #ffcc00;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Container do Carrossel Ajustado para as Setas */
+.carousel-container {
+    flex: 1 1 calc(50% - 15px);
+    min-width: 300px;
+    background-color: #1a1a1a;
+    border: 2px solid #ffcc00;
+    border-radius: 6px;
+    padding: 20px 40px; /* Espaço estendido nas laterais para abrigar as setas com segurança */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-track {
+    width: 100%;
+}
+
+.carousel-slide {
+    width: 100%;
+    display: none;
+    position: relative;
+}
+
+.carousel-slide.active {
+    display: block; /* Mostra apenas o slide fixado ativo */
+}
+
+.carousel-slide img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.carousel-caption {
+    text-align: center;
+    margin-top: 15px;
+    color: #ffffff;
+}
+
+.carousel-caption h2 {
+    color: #ffcc00;
+    font-size: 14pt;
+    margin-bottom: 5px;
+}
+
+.carousel-caption p {
+    color: #cccccc;
+    font-size: 10.5pt;
+    margin: 0;
+}
+
+/* Ajuste específico para as setas da página de produto ficarem bem posicionadas */
+.carousel-container .carousel-arrow {
+    font-size: 18pt; /* Destaca as setas na área do produto */
+}
+
+.carousel-container .arrow-left {
+    left: 15px;
+}
+
+.carousel-container .arrow-right {
+    right: 15px;
+}
+
+
+/* ==========================================================================
+   ESTILOS DO RODAPÉ (FOOTER)
+   ========================================================================== */
+
+#main-footer {
+    background-color: #1a1a1a;
+    border-top: 3px solid #ffcc00;
+    padding: 40px 20px 20px 20px;
+    margin-top: 40px;
+    width: 100%;
+    display: block; /* Força o rodapé a se isolar em uma linha cheia */
+}
+
+/* Container das 3 colunas */
+.footer-container {
+    display: block; /* Mudado de flex para block para empilhar tudo nativamente */
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Cada bloco de informação agora vira uma linha completa */
+.footer-column {
+    display: block; /* Força a ocupar a linha inteira */
+    width: 100%;    /* Ocupa 100% da largura disponível */
+    text-align: center; /* Centraliza os textos para ficar elegante */
+    margin-bottom: 25px; /* Dá um espaçamento confortável antes da próxima informação */
+    color: #cccccc;
+    font-size: 10pt;
+}
+
+/* Garante que o título de cada bloco fique bem destacado na linha */
+.footer-column h3 {
+    color: #ffcc00;
+    font-size: 12pt;
+    text-transform: uppercase;
+    margin: 0 0 12px 0;
+    letter-spacing: 1px;
+}
+
+.footer-column p {
+    margin: 0 0 10px 0;
+    line-height: 1.6;
+}
+
+/* Link do Instagram */
+.footer-social-link {
+    display: inline-block;
+    color: #121212;
+    background-color: #ffcc00;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    font-size: 9.5pt;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+/* Linha inferior e Frase Épica */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+    display: block;
+    clear: both; /* Limpa qualquer interferência de colunas acima */
+}
+
+.footer-divider {
+    border: 0;
+    border-top: 1px solid #333333;
+    margin-bottom: 25px;
+}
+
+.epic-quote {
+    color: #ffcc00;
+    font-size: 13pt;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 1.5px;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.copyright {
+    color: #666666;
+    font-size: 8.5pt;
+    margin: 0;
+}
+
+/* ==========================================================================
+   INTERFACES DO CHAT FAKE
+   ========================================================================== */
+
+#fake-chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999; /* Garante que fique acima de tudo, até do rodapé */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Botão Flutuante Redondo */
+#chat-button {
+    background-color: #ffcc00;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+#chat-button:hover {
+    transform: scale(1.05);
+}
+
+#chat-icon {
+    width: 50px;
+    height: 50px;
+    color: #121212;
+}
+
+/* Janela de Conversa */
+#chat-window {
+    position: absolute;
+    bottom: 75px;
+    right: 0;
+    width: 320px;
+    height: 400px;
+    background-color: #1a1a1a;
+    border: 2px solid #ffcc00;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+/* Classes para controlar o abrir/fechar de forma suave */
+.chat-hidden {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    pointer-events: none;
+}
+
+/* Cabeçalho da Janela */
+#chat-header {
+    background-color: #262626;
+    border-bottom: 1px solid #333;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.chat-status-container {
+    display: flex;
+    align-items: center;
+}
+
+.chat-status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #00ff66; /* Pontinho verde de online */
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+/* Foto do Mascote no Cabeçalho */
+.chat-mascot-pic {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;  /* Encaixa o rosto do mascote sem distorcer */
+    margin-right: 8px;  /* Dá um espacinho em relação ao título */
+}
+
+.chat-title {
+    color: #ffcc00;
+    font-weight: bold;
+    font-size: 11pt;
+}
+
+#chat-close-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Corpo das Mensagens */
+#chat-body {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto; /* Cria barra de rolagem se o texto acumular */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Estilo Geral das Bolhas */
+.chat-message {
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 10pt;
+    max-width: 80%;
+    line-height: 1.4;
+}
+
+/* Mensagem que o Robô/Sistema manda */
+.bot-message {
+    background-color: #333333;
+    color: #ffffff;
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+}
+
+/* Mensagem que o Usuário digita */
+.user-message {
+    background-color: #ffcc00;
+    color: #121212;
+    align-self: flex-end;
+    font-weight: 500;
+    border-bottom-right-radius: 2px;
+}
+
+/* Rodapé com Input e Botão */
+#chat-footer {
+    padding: 10px;
+    background-color: #262626;
+    border-top: 1px solid #333;
+    display: flex;
+    gap: 6px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+#chat-input {
+    flex: 1;
+    background-color: #121212;
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 8px;
+    color: #ffffff;
+    font-size: 9.5pt;
+}
+
+#chat-input:focus {
+    outline: none;
+    border-color: #ffcc00;
+}
+
+#chat-send-btn {
+    background-color: #ffcc00;
+    border: none;
+    color: #121212;
+    padding: 0 12px;
+    font-weight: bold;
+    font-size: 9pt;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* ==========================================================================
+   RESPONSIVIDADE (TELAS MENORES E CELULARES)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* Faz os carrosséis ocuparem 100% da largura em telas pequenas */
+    .carousel-column, .carousel-container, .product-details {
+        flex: 1 1 100%;
+    }
+
+    /* Ajusta as colunas do rodapé para ficarem uma embaixo da outra */
+    .footer-column {
+        flex: 1 1 100%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    
+    /* Centraliza o link do instagram no mobile */
+    .footer-social-link {
+        display: inline-block;
+        margin: 0 auto;
+    }
+
+    /* Reduz um pouco o tamanho do cabeçalho no celular para não sumir com a tela */
+    #main-header h1 {
+        font-size: 18pt;
+    }
+    .header-star {
+        font-size: 18pt;
+        right: 10px;
+    }
+}

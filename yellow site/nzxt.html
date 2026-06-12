@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NZXT Experience - Yellow Cases</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <header id="main-header">
+        <img src="./source/img/identi/banner.png" id="banner">
+    </header>
+
+    <nav id="main-nav">
+        <a href="./home.html" class="nav-item">HOME</a>
+        <a href="#" class="nav-item">CAPAS</a>
+        <a href="#" class="nav-item">PELÍCULAS</a>
+        <a href="#" class="nav-item">ACESSÓRIOS</a>
+        <a href="#" class="nav-item">AUDIO</a>
+        <a href="#" class="nav-item">GAMER</a>
+    </nav>
+
+    <main>
+        <a href="./home.html" class="back-link">&larr; Voltar</a>
+
+        <div class="product-container">
+            
+            <div class="carousel-container">
+                <span class="carousel-arrow arrow-left" id="prev-btn">&larr;</span>
+
+                <div class="carousel-track">
+                    <div class="carousel-slide active">
+                        <img src="./source/img/carrosel2/img1.webp" alt="NZXT Produto 1">
+                        <div class="carousel-caption">
+                            <h2>NZXT Performance</h2>
+                            <p>Engenharia de precisão para seu setup.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <img src="./source/img/carrosel2/img2.webp" alt="NZXT Produto 2">
+                        <div class="carousel-caption">
+                            <h2>Estética Minimalista</h2>
+                            <p>Design que se integra perfeitamente.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <img src="./source/img/carrosel2/img3.webp" alt="NZXT Produto 3">
+                        <div class="carousel-caption">
+                            <h2>Tecnologia de Ponta</h2>
+                            <p>Máxima eficiência térmica e fluxo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <span class="carousel-arrow arrow-right" id="next-btn">&rarr;</span>
+            </div>
+
+            <div class="product-details">
+                <span class="carousel-badge">GAMER ZONE</span>
+                <h2 class="product-title">NZXT MASTER SERIES</h2>
+                
+                <p class="product-ref">Referência: NZXT-MK2</p>
+                
+                <div class="product-price">R$ 1.270,00</div>
+                
+                <p class="product-description">
+                    Eleve o padrão do seu computador com a linha premium da NZXT. Combinando durabilidade, um design visual icônico e performance superior, os componentes NZXT são a escolha dos entusiastas que não abrem mão da qualidade e do estilo inconfundível.
+                </p>
+
+                <h3 class="specs-title">Especificações Técnicas</h3>
+                <ul class="specs-list">
+                    <li><strong>Construção:</strong> Aço reforçado e vidro temperado</li>
+                    <li><strong>Compatibilidade:</strong> Padrão ATX e Micro-ATX</li>
+                    <li><strong>Refrigeração:</strong> Suporte para Water Cooler 360mm</li>
+                    <li><strong>Fluxo de Ar:</strong> Sistema inteligente de ventilação</li>
+                    <li><strong>Iluminação:</strong> Compatível com RGB CAM Software</li>
+                </ul>
+
+                <a href="https://wa.me/5547992216572?text=Olá!%20Tenho%20interesse%20nos%20produtos%20NZXT%20do%20site." target="_blank" class="btn-buy">
+                    Consultar Disponibilidade no WhatsApp
+                </a>
+            </div>
+        </div>
+    </main>
+
+<footer id="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>SOBRE NÓS</h3>
+                <p>Na Yellow Cases, somos movidos pela paixão por tecnologia e estilo. Oferecemos a maior variedade de capas, películas e acessórios premium para proteger e elevar o nível dos seus dispositivos. Seu setup, suas regras.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>CONTATO</h3>
+                <p><strong>WhatsApp:</strong> (47) 99221-6572</p>
+                <p><strong>E-mail:</strong> contato@yellowcases.com</p>
+                <p><strong>Endereço:</strong> Av. Nereu Ramos, 4009 - salas 02 e 03 - Meia Praia, Itapema - SC</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>REDES SOCIAIS</h3>
+                <a href="https://instagram.com" target="_blank" class="footer-social-link">@YELLOWCASES.OFICIAL</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <hr class="footer-divider">
+            <p class="epic-quote">"O SUCESSO NÃO É APENAS O DESTINO, É A PROTEÇÃO E A FORÇA DA SUA JORNADA."</p>
+            <p class="copyright">&copy; 2026 Yellow Cases. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const slides = document.querySelectorAll(".carousel-slide");
+            const prevBtn = document.getElementById("prev-btn");
+            const nextBtn = document.getElementById("next-btn");
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove("active"));
+                if (index >= slides.length) currentIndex = 0;
+                else if (index < 0) currentIndex = slides.length - 1;
+                else currentIndex = index;
+                slides[currentIndex].classList.add("active");
+            }
+
+            nextBtn.addEventListener("click", () => showSlide(currentIndex + 1));
+            prevBtn.addEventListener("click", () => showSlide(currentIndex - 1));
+        });
+    </script>
+</body>
+</html>
