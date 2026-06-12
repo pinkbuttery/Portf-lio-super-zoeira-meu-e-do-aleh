@@ -1,0 +1,246 @@
+/* ==========================================
+   1. RESET & CONFIGURAÇÕES GERAIS
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1c23; /* Fundo grafite escuro */
+    color: #e2e8f0;
+    min-height: 100vh;
+    display: block;
+}
+
+/* ==========================================
+   2. PAINEL SUPERIOR (BARRA DE STATUS)
+   ========================================== */
+#status-bar {
+    background-color: #242631;
+    border-bottom: 3px solid #3f4257;
+    display: block;
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.status-item {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 30px;
+    letter-spacing: 1px;
+}
+
+#vitorias { color: #f1c40f; }
+#vida-max { color: #e74c3c; }
+#ouro { color: #f39c12; }
+
+/* ==========================================
+   3. ÁREA PRINCIPAL DO JOGO (LAYOUT DE COLUNAS)
+   ========================================== */
+#area-jogo {
+    max-width: 1200px; /* Mantém um limite elegante na tela */
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex; 
+    justify-content: center;
+    align-items: flex-start; 
+    gap: 30px; 
+}
+
+/* O painel da mochila precisa de um tamanho fixo exato para o grid 6x6 */
+#secao-mochila {
+    background-color: #242631;
+    border: 2px solid #3f4257;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 440px; /* Tamanho perfeito para abraçar os slots e as margens */
+    min-height: 520px;
+}
+
+/* O painel da loja pode expandir mais para exibir os 3 itens lado a lado */
+#secao-loja {
+    background-color: #242631;
+    border: 2px solid #3f4257;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    flex: 1; /* Ocupa todo o resto do espaço disponível na direita */
+    max-width: 600px; /* Limite extra para a vitrine abrir com folga */
+    min-height: 520px;
+}
+/* ==========================================
+   4. A MOCHILA (GRADE ESTÁTICA DE FUNDO)
+   ========================================== */
+#mochila-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 60px); 
+    grid-template-rows: repeat(6, 60px);    /* <-- Mude de 3 para 6 aqui */
+    gap: 4px;                               
+    background-color: #13141a;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #4a4e69;
+    width: fit-content;
+    margin: 0 auto;
+    position: relative; 
+}
+
+/* Amplia o sprite para ocupar quase todo o espaço do bloco na mochila */
+#mochila-grid .item-sprite {
+    width: 90% !important;  /* Aumentamos de 75% para 90% */
+    height: 90% !important; /* Aumentamos de 75% para 90% */
+    max-width: 54px !important;  /* Garante que não passe de 1 slot se for 1x1 */
+    max-height: 54px !important; /* Garante que não passe de 1 slot se for 1x1 */
+    object-fit: contain;
+    image-rendering: pixelated; /* Mantém os pixels nítidos e lindos */
+}
+
+/* Caso queira que o escudo ou a espada (itens maiores) usem sprites maiores na mochila: */
+#mochila-grid .tamanho-2x2 .item-sprite {
+    max-width: 110px !important;
+    max-height: 110px !important;
+}
+
+#mochila-grid .tamanho-1x3 .item-sprite {
+    max-width: 54px !important;
+    max-height: 170px !important;
+}
+
+.slot {
+    width: 60px;
+    height: 60px;
+    background-color: #2e303f;
+    border: 1px solid #4a4e69;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: background-color 0.2s;
+}
+
+.slot:hover {
+    background-color: #3d4156;
+    border-color: #748cab;
+}
+
+/* ==========================================
+   5. A LOJA (VITRINE UNIFORME CORRIGIDA)
+   ========================================== */
+#vitrine-loja {
+    min-height: 220px;
+    background-color: #13141a;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Mantém todos os itens alinhados pelo centro, sem esticar! */
+    gap: 20px;
+}
+
+/* Estilo padrão do Card na Loja (Tamanho idêntico para a vitrine) */
+.item-loja {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+    color: white;
+    padding: 12px 8px;
+    border-radius: 8px;
+    cursor: grab;
+    user-select: none;
+    border: 2px solid #718096;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    
+    /* Força todos os cards da loja a terem o mesmo tamanho na vitrine */
+    width: 110px !important; 
+    height: 140px !important; 
+    text-align: center;
+}
+
+.item-loja:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+    border-color: #f1c40f;
+}
+
+/* Container isolado para o texto não empurrar ou sumir com a imagem */
+.item-info-texto {
+    color: #ffffff;
+    font-size: 0.75rem;
+    line-height: 1.2;
+    margin-top: 8px;
+    width: 100%;
+}
+
+.item-info-texto strong {
+    display: block;
+    margin-bottom: 3px;
+}
+
+.item-info-texto small {
+    color: #f1c40f;
+    font-weight: bold;
+}
+
+/* Configuração base para as imagens (Sprites na Loja) */
+.item-sprite {
+    width: 50px !important;
+    height: 50px !important;
+    object-fit: contain;
+    image-rendering: pixelated; 
+    pointer-events: none;
+}
+/* ==========================================
+   6. MODIFICADORES (QUANDO EQUIPADO NA MOCHILA)
+   ========================================== 
+
+   A lógica matemática de pixels para a altura é a mesma: 3 blocos de 60px + 2 espaços (gaps) de 4px = 188px de altura.*/
+
+.item-loja.tamanho-1x1 { width: 60px !important; height: 60px !important; }
+.item-loja.tamanho-2x1 { width: 124px !important; height: 60px !important; }
+.item-loja.tamanho-2x2 { width: 124px !important; height: 124px !important; }
+.item-loja.tamanho-1x3 { width: 60px !important; height: 188px !important; } /* <-- AGORA SIM! 1 de largura por 3 de altura */
+.item-loja.tamanho-3x3 { width: 188px !important; height: 188px !important; }
+#mochila-grid .tamanho-3x3 .item-sprite {
+    max-width: 170px !important;
+    max-height: 170px !important;
+}
+/* Desenha o formato de T perfeito na caixinha quando o machado for para a mochila */
+#mochila-grid .item-loja#machado {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 33.33%, 66.66% 33.33%, 66.66% 100%, 33.33% 100%, 33.33% 33.33%, 0% 33.33%);
+}
+/* ==========================================
+   7. BOTÃO DE IR PARA BATALHA
+   ========================================== */
+#btn-batalhar {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 5px 0px #1e7e43, 0 10px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.1s ease;
+    width: 100%;
+}
+
+#btn-batalhar:hover {
+    background: linear-gradient(135deg, #2efc81 0%, #2ecc71 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 0px #1e7e43, 0 12px 18px rgba(0, 0, 0, 0.4);
+}
+
+#btn-batalhar:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px 0px #1e7e43, 0 3px 5px rgba(0, 0, 0, 0.3);
+}

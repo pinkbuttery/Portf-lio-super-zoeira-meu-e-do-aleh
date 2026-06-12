@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backpack Brawl - Batalha</title>
+    <link rel="stylesheet" href="../estilos/style_batalha.css">
+</head>
+<body>
+
+    <header id="status-batalha">
+        <h1>Combate em Andamento!</h1>
+        <div id="cronometro">Tempo: <span id="tempo-decorrido">00:00</span></div>
+    </header>
+
+    <main id="arena">
+
+        <section class="combatente" id="jogador">
+            <div class="info-combatente">
+                <h2>Você (Herói)</h2>
+                <div class="barra-vida-container">
+                    <div class="barra-vida" id="vida-jogador" style="width: 100%;"></div>
+                </div>
+                <span class="texto-vida">100 / 100 ❤️</span>
+            </div>
+            
+            <div class="mochila-combate">
+                <div class="item-ativo">⚔️</div>
+                <div class="item-ativo">🛡️</div>
+            </div>
+        </section>
+
+        <section id="log-combate">
+            <h3>Registro de Turnos</h3>
+            <div id="lista-eventos">
+                <p class="evento">A batalha começou!</p>
+                </div>
+        </section>
+
+        <section class="combatente" id="inimigo">
+            <div class="info-combatente">
+                <h2>Monstro da Taverna</h2>
+                <div class="barra-vida-container">
+                    <div class="barra-vida" id="vida-inimigo" style="width: 100%;"></div>
+                </div>
+                <span class="texto-vida">80 / 80 ❤️</span>
+            </div>
+
+            <div class="mochila-combate">
+                <div class="item-ativo">🪓</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="acoes-batalha">
+        <button type="button" id="btn-voltar" class="btn-resultado" disabled>Carregando resultado...</button>
+    </footer>
+    <script src="../scripts/main_batalha.js"></script></body>
+</html>

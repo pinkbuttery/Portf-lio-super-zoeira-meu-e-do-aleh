@@ -1,0 +1,48 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle, #3e1e1e 0%, #1a0d0d 100%); /* Fundo vermelho sangue escuro */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container-derrota {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 60px;
+    border-radius: 20px;
+    border: 3px solid #e74c3c;
+    box-shadow: 0 0 40px rgba(231, 76, 60, 0.4);
+}
+
+.titulo-derrota {
+    color: #e74c3c;
+    font-size: 5rem;
+    text-shadow: 0 0 20px rgba(231, 76, 60, 0.5);
+    margin-bottom: 10px;
+}
+
+.subtitulo { color: #a0aec0; font-size: 1.2rem; margin-bottom: 30px; }
+
+.status-final { color: white; margin-bottom: 40px; font-size: 1.1rem; }
+.status-final span { color: #f1c40f; font-weight: bold; }
+
+.btn-reiniciar {
+    text-decoration: none;
+    display: inline-block;
+    background-color: #e74c3c;
+    color: white;
+    padding: 20px 50px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    box-shadow: 0 5px 0px #a93226;
+    transition: 0.2s;
+}
+
+.btn-reiniciar:hover { background-color: #ff5e4d; transform: translateY(-2px); }
+.btn-reiniciar:active { transform: translateY(4px); box-shadow: 0 1px 0px #a93226; }

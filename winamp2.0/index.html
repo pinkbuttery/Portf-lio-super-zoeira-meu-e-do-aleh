@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Winamp Insane Edition</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="player">
+
+    <!-- TOP BAR -->
+    <div class="title-bar">
+        WINAMP INSANE EDITION 2003+
+    </div>
+
+    <!-- MAIN SCREEN -->
+    <div class="screen">
+
+        <div class="song-title">
+            Clique em 📁 para abrir uma música
+        </div>
+
+        <div class="time">
+            00:00 / 00:00
+        </div>
+
+        <div class="visualizer"></div>
+
+        <div class="progress">
+            <div class="progress-fill"></div>
+        </div>
+
+    </div>
+
+    <!-- EQ VISUAL -->
+    <div class="equalizer">
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+    </div>
+
+    <!-- EQ SLIDERS -->
+    <div class="eq-sliders">
+
+        <input type="range" min="-12" max="12" value="0" data-freq="60">
+        <input type="range" min="-12" max="12" value="0" data-freq="170">
+        <input type="range" min="-12" max="12" value="0" data-freq="350">
+        <input type="range" min="-12" max="12" value="0" data-freq="600">
+        <input type="range" min="-12" max="12" value="0" data-freq="1000">
+        <input type="range" min="-12" max="12" value="0" data-freq="3000">
+        <input type="range" min="-12" max="12" value="0" data-freq="6000">
+        <input type="range" min="-12" max="12" value="0" data-freq="12000">
+        <input type="range" min="-12" max="12" value="0" data-freq="16000">
+        <input type="range" min="-12" max="12" value="0" data-freq="20000">
+
+    </div>
+
+    <!-- CONTROLES -->
+    <div class="controls">
+
+        <button id="abrir">📁 OPEN</button>
+        <button id="play">▶</button>
+        <button id="pause">⏸</button>
+
+        <button id="mute">🔊</button>
+
+        <div class="volume-box">
+            <span>VOL</span>
+            <input type="range" id="volume" min="0" max="100" value="100">
+        </div>
+
+        <div class="balance-box">
+            <span>L</span>
+            <input type="range" id="balance" min="-100" max="100" value="0">
+            <span>R</span>
+        </div>
+
+        <!-- FULLSCREEN -->
+        <button id="fs">⛶</button>
+        <button id="exitFs">↩</button>
+
+    </div>
+
+    <!-- PLAYLIST -->
+    <div class="playlist-panel">
+
+        <div class="playlist-header">
+            PLAYLIST
+        </div>
+
+        <ul id="playlist"></ul>
+
+    </div>
+
+</div>
+
+<!-- FILE INPUT -->
+<input type="file" id="fileInput" accept="audio/*" hidden>
+
+<!-- AUDIO -->
+<audio id="audio"></audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>
